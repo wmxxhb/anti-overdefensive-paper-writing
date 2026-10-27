@@ -1,59 +1,103 @@
 # Anti-overdefensive Paper Writing
 
-[中文](README.md) · [Skill](skills/anti-overdefensive-paper-writing/SKILL.md) · [Validation](docs/validation.md) · [MIT License](LICENSE)
+**Help AI-assisted papers spend fewer words on pre-emptive defence and more on the argument.**
 
-A writing skill for drafting, revising, compressing, and reviewing Chinese and English academic prose. It helps sentences advance an argument while preserving evidence, meaningful comparisons, and necessary conditions.
+[中文](README.md) · [View the skill](skills/anti-overdefensive-paper-writing/SKILL.md) · [v0.4.0](https://github.com/wmxxhb/anti-overdefensive-paper-writing/tree/v0.4.0)
 
-**Version: 0.4.0.** Skill instructions are primarily in Chinese, with examples and tests for both languages.
+AI revisions often add “not X but Y,” “this does not imply,” and “we do not claim.” Paragraphs start answering hypothetical objections, end with another caveat, and bury a clear finding under self-explanation.
 
-## What it does
+This skill helps the assistant remove that clutter and organize the prose around the research question, method, and evidence. It supports drafting, polishing, compression, and writing review in Chinese and English.
 
-- Organizes a manuscript around its research question, supported contribution, mechanism, and evidence.
-- Detects uninvited objections, empty negative contrasts, repeated caveats, authorial apologies, and generic conclusions.
-- Preserves numbers, polarity, scope, inference strength, source status, quotations, and citation support.
-- Distinguishes repeated statements from synthesis across methods, conditions, and trade-offs.
-- Matches supplied author examples and the intended reader; checks whether editing adds useful information.
-- Includes a read-only candidate scanner for UTF-8 text, Markdown, and LaTeX.
+## Before and after
 
-For example, when the evidence is recall increasing from 71% to 74% on two in-domain datasets, the paragraph can state that result directly. A defensive preface about replacing every retrieval framework adds little. Actual adverse results, statistical interpretation boundaries, and competing explanations remain part of the argument.
+**Before**
 
-## Install
+> This study is not intended to replace existing retrieval frameworks, but to explore candidate filtering. Although recall increased from 71% to 74% on two in-domain datasets, we must acknowledge that this does not mean the method solves every retrieval problem, and its potential value should be interpreted with caution.
+
+**After**
+
+> Candidate filtering increased recall from 71% to 74% on two in-domain datasets.
+
+The editing question is practical: what fact, explanation, or inference condition would be lost by removing a sentence? Meaningful comparisons, adverse results, scope conditions, and statistical interpretation remain in the paper.
+
+## What it catches
+
+| Pattern | Editing goal |
+|---|---|
+| Empty “not X but Y” contrasts | State what the research does |
+| Repeated denials and hypothetical objections | Keep explanations that affect the current claim |
+| Apologies and blanket judgments of limited value | Report specific benefits, costs, and comparison conditions |
+| The same caution in every paragraph | Place each condition beside the claim it qualifies |
+| Experiments narrated as a development diary | Organize results around the judgments they support |
+| Repeated closers and generic future work | Cut restatement while preserving synthesis across results |
+
+For full manuscripts, the skill also checks the contribution's thread, numbers and terminology, citation support, and explanations added during revision.
+
+## Quick start
 
 Ask Codex:
 
 ```text
-Install this GitHub skill:
+Install this paper-writing skill:
 https://github.com/wmxxhb/anti-overdefensive-paper-writing/tree/main/skills/anti-overdefensive-paper-writing
 ```
 
-Alternatively, copy `skills/anti-overdefensive-paper-writing` into your skills directory, normally `~/.codex/skills` or `$CODEX_HOME/skills` when configured. Use it on the next conversation turn:
+Use it on the next conversation turn. You can also download the repository and copy the entire `skills/anti-overdefensive-paper-writing` folder into your skills directory.
+
+### Polish a paragraph
 
 ```text
-Use $anti-overdefensive-paper-writing to polish this paragraph. Return the prose only.
+Use $anti-overdefensive-paper-writing to polish this paragraph. Return the revised prose only.
+
+[paste paragraph]
 ```
+
+### Shorten an abstract
 
 ```text
-Use $anti-overdefensive-paper-writing to review this paper. Keep the original and give location-specific recommendations.
+Use $anti-overdefensive-paper-writing to shorten this abstract to 150 words. Preserve the key results, costs, and conditions.
+
+[paste abstract]
 ```
 
-Automatic selection is enabled when the task matches. Other assistants that support file-based skills can read `SKILL.md` and its relevant references.
+### Review a manuscript
 
-## Scanner and tests
+```text
+Use $anti-overdefensive-paper-writing to review this manuscript for defensive writing.
+Keep the original and give location-specific findings and recommendations.
 
-Requires Python 3.10+. The scanner and tests use the standard library.
+[provide manuscript]
+```
+
+Include a sample of your own writing to calibrate terminology, sentence structure, and voice. Skill instructions are primarily in Chinese, with examples for both languages.
+
+## Scan an existing draft
+
+The read-only scanner supports UTF-8 text, Markdown, and LaTeX. It requires Python 3.10+ and uses the standard library.
 
 ```sh
+python skills/anti-overdefensive-paper-writing/scripts/scan_defensive_prose.py paper.md
 python skills/anti-overdefensive-paper-writing/scripts/scan_defensive_prose.py paper.tex --format json
+```
+
+Output includes candidate expressions, original positions, and context. Supported code, math regions, and citation keys are masked; footnotes, list prose, and visible citation notes remain reviewable. Decide edits in context.
+
+## Validation
+
+The current version passes **50 unit tests and 100 formatting probes**. Four actual writing outputs also passed independent outcome review. See the [validation record](docs/validation.md).
+
+<details>
+<summary>Run the tests</summary>
+
+From the repository root:
+
+```sh
 python -B -m unittest discover -s skills/anti-overdefensive-paper-writing/tests -p test_scanner.py
 python -B validation/run_probes.py
 ```
 
-Use `-` for standard input, adding `--latex` for LaTeX input. Markdown blockquotes are excluded by default; use `--include-blockquotes` to inspect them. The scanner reports candidates with their original positions and context. Editorial decisions depend on each sentence's role in the argument.
+</details>
 
-The release includes **50 unit tests, 100 formatting probes, and 14 development behavior cases**. Four writing outputs also received independent outcome review. See [validation scope and results](docs/validation.md).
+## License
 
-## Attribution and contributions
-
-Eight open-source projects informed the design. See the [design sources](skills/anti-overdefensive-paper-writing/references/source-notes.md) and [third-party notices](THIRD_PARTY_NOTICES.md). This project is licensed under [MIT](LICENSE).
-
-For a writing issue, provide a shareable minimal passage, the information that must survive, and the actual output. For scanner issues, include the format, expected candidates, and actual positions.
+[MIT](LICENSE)
