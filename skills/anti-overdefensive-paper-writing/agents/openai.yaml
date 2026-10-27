@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文写作·反过度防御"
+  short_description: "围绕贡献、机制与证据组织论文，清理过度防守并核对改写含义"
+  default_prompt: "使用 $anti-overdefensive-paper-writing 完成当前论文写作任务，让每个段落推进论证。"

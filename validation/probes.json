@@ -1,0 +1,1398 @@
+{
+  "version": "0.4.0",
+  "cases": [
+    {
+      "id": "S01",
+      "input": "本研究不是替代全部检索器，而是筛选候选集合。",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S02",
+      "input": "这不是参数规模问题。真正的问题在于层间交换不足。",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S03",
+      "input": "简化以理解成本而不是行数为目标。",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S04",
+      "input": "This is not a benchmark but a retrieval module.",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S05",
+      "input": "This is not a benchmark. Rather, it merges two ranked lists.",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S06",
+      "input": "This isn't a new benchmark. It is a way of reasoning about retrieval.",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S07",
+      "input": "Fast retrieval, not universal answers.",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S08",
+      "input": "The module is good for retrieval, not for universal answers.",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S09",
+      "input": "No new benchmark. No universal theory. Just candidate merging.",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S10",
+      "input": "这不意味着全面验证，不能认为它通用，也不代表覆盖全部情形。",
+      "latex": false,
+      "options": {},
+      "expected_kind": "preemptive-denial"
+    },
+    {
+      "id": "S11",
+      "input": "不能将该结果理解为全面验证。",
+      "latex": false,
+      "options": {},
+      "expected_kind": "preemptive-denial"
+    },
+    {
+      "id": "S16",
+      "input": "$\\text{not X but Y}$",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "S17",
+      "input": "\\begin{equation}\n\\text{not X but Y}\n\\end{equation}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "S18",
+      "input": "\\begin{align}\n\\text{not X but Y}\n\\end{align}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "S19",
+      "input": "% 本研究不是替代全部检索器，而是筛选候选集合。",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "S20",
+      "input": "> “本研究不是替代全部检索器，而是筛选候选集合。”",
+      "latex": false,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "S21",
+      "input": "The association does not establish causation because confounding was not controlled.",
+      "latex": false,
+      "options": {},
+      "expected_kind": "preemptive-denial"
+    },
+    {
+      "id": "S22",
+      "input": "差异来自检索模块而非额外特征；两组使用了相同特征。",
+      "latex": false,
+      "options": {},
+      "expected_kind": "negative-contrast"
+    },
+    {
+      "id": "S23",
+      "input": "在两个同领域数据集上，平均准确率由 85% 提高至 86%。",
+      "latex": false,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "P01",
+      "input": "正文不意味着全面验证。",
+      "latex": false,
+      "options": {},
+      "expected_count": 1
+    },
+    {
+      "id": "P02",
+      "input": "结果见注[^1]。\n\n[^1]: 这不意味着全面验证。",
+      "latex": false,
+      "options": {},
+      "expected_count": 1
+    },
+    {
+      "id": "P03",
+      "input": "[source]: https://example.test/ 不代表",
+      "latex": false,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "P04",
+      "input": "结果见注[^1]。\n\n[^1]: 说明。\n    这不意味着全面验证。",
+      "latex": false,
+      "options": {},
+      "expected_count": 1
+    },
+    {
+      "id": "P05",
+      "input": "\\cite{not-X-but-Y}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "P06",
+      "input": "\\autocite{not-X-but-Y}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "P07",
+      "input": "\\parencite{not-X-but-Y}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "P08",
+      "input": "\\textcite{not-X-but-Y}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "P09",
+      "input": "这**不是**参数规模问题，**而是**信息传递问题。",
+      "latex": false,
+      "options": {},
+      "expected_count": 1
+    },
+    {
+      "id": "P10",
+      "input": "> 这不意味着全面验证。",
+      "latex": false,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "P11",
+      "input": "> 这不意味着全面验证。",
+      "latex": false,
+      "options": {
+        "include_blockquotes": true
+      },
+      "expected_count": 1
+    },
+    {
+      "id": "P12",
+      "input": "结果\\footnote{这不意味着全面验证。}。",
+      "latex": true,
+      "options": {},
+      "expected_count": 1
+    },
+    {
+      "id": "P13",
+      "input": "我们的目的并非替代现有检索器。模块将两个排序列表合并。",
+      "latex": false,
+      "options": {},
+      "expected_count": 1
+    },
+    {
+      "id": "P14",
+      "input": "This doesn't mean the method is universal.",
+      "latex": false,
+      "options": {},
+      "expected_count": 1
+    },
+    {
+      "id": "E01",
+      "input": "```python\nprint('不是甲而是乙')\n```",
+      "latex": false,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E02",
+      "input": "    print('不是甲而是乙')\n",
+      "latex": false,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E03",
+      "input": "正文[^a]。\n\n[^a]: 说明。\n    这不意味着全面验证。",
+      "latex": false,
+      "options": {},
+      "expected_count": 1
+    },
+    {
+      "id": "E04",
+      "input": "\\verb|not X but Y|",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E05",
+      "input": "\\verb*|not X but Y|",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E06",
+      "input": "\\begin{minted}{python}\nprint('不是甲而是乙')\n\\end{minted}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E07",
+      "input": "\\autocite{not-X-but-Y}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E08",
+      "input": "\\autocites{not-X-but-Y}{second-key}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E09",
+      "input": "\\parencites{first-key}{not-X-but-Y}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E10",
+      "input": "\\url{https://example.test/not-X-but-Y}",
+      "latex": true,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E11",
+      "input": "> 这不意味着全面验证。",
+      "latex": false,
+      "options": {},
+      "expected_count": 0
+    },
+    {
+      "id": "E12",
+      "input": "> 这不意味着全面验证。",
+      "latex": false,
+      "options": {
+        "include_blockquotes": true
+      },
+      "expected_count": 1
+    },
+    {
+      "id": "E13",
+      "input": "The interval does not establish equivalence because no equivalence test was specified.",
+      "latex": false,
+      "options": {},
+      "expected_count": 1
+    },
+    {
+      "id": "independent/md_indented_code_spaces",
+      "input": "说明。\n\n    不意味着。\n\n正文不代表。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 5,
+          "column": 3,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_indented_code_tab",
+      "input": "说明。\n\n\t不意味着。\n\n正文不代表。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 5,
+          "column": 3,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_prose_continuation_spaces",
+      "input": "说明尚未结束，\n    不代表通用性。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 2,
+          "column": 5,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_footnote_first_line",
+      "input": "正文[^a]。\n\n[^a]: 不代表通用性。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 3,
+          "column": 7,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_footnote_blank_continuation",
+      "input": "[^a]: 说明。\n\n    不代表通用性。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 3,
+          "column": 5,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_footnote_code_then_prose",
+      "input": "[^a]: 说明。\n\n        不意味着。\n\n    不代表通用性。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 5,
+          "column": 5,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_list_blank_continuation",
+      "input": "- 说明。\n\n  不代表通用性。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 3,
+          "column": 3,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_numbered_list_blank_continuation",
+      "input": "12. 说明。\n\n    不代表通用性。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 3,
+          "column": 5,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_list_code_then_prose",
+      "input": "- 说明。\n\n      不意味着。\n\n  不代表通用性。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 5,
+          "column": 3,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_nested_list_continuation",
+      "input": "- a\n\n    - b\n\n      不代表。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 5,
+          "column": 7,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/md_nested_list_code_then_prose",
+      "input": "- a\n\n    - b\n\n          不意味着。\n\n      不代表。",
+      "latex": false,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 7,
+          "column": 7,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_verb_verb_124",
+      "input": "不能认为等效。\\verb|不代表；% \\begin{minted}|正文不意味着验证。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不能认为"
+        },
+        {
+          "line": 1,
+          "column": 37,
+          "matched": "不意味着"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_verb_verb_43",
+      "input": "不能认为等效。\\verb+不代表；% \\begin{minted}+正文不意味着验证。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不能认为"
+        },
+        {
+          "line": 1,
+          "column": 37,
+          "matched": "不意味着"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_verb_verb_33",
+      "input": "不能认为等效。\\verb!不代表；% \\begin{minted}!正文不意味着验证。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不能认为"
+        },
+        {
+          "line": 1,
+          "column": 37,
+          "matched": "不意味着"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_verb_verbstar_124",
+      "input": "不能认为等效。\\verb*|不代表；% \\begin{minted}|正文不意味着验证。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不能认为"
+        },
+        {
+          "line": 1,
+          "column": 38,
+          "matched": "不意味着"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_verb_verbstar_43",
+      "input": "不能认为等效。\\verb*+不代表；% \\begin{minted}+正文不意味着验证。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不能认为"
+        },
+        {
+          "line": 1,
+          "column": 38,
+          "matched": "不意味着"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_verb_verbstar_33",
+      "input": "不能认为等效。\\verb*!不代表；% \\begin{minted}!正文不意味着验证。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不能认为"
+        },
+        {
+          "line": 1,
+          "column": 38,
+          "matched": "不意味着"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_unclosed_verb_keeps_next_line",
+      "input": "\\verb|普通文本\n正文不代表。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 2,
+          "column": 3,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_verb_literal_fake_command",
+      "input": "\\verb|\\verb!| 不代表。!",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 15,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_verb_star_literal_fake_command",
+      "input": "\\verb*|\\verb!| 不代表。!",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 16,
+          "matched": "不代表"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_cite",
+      "input": "不代表。\\cite[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 11,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 42,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citep",
+      "input": "不代表。\\citep[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 12,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 43,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citet",
+      "input": "不代表。\\citet[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 12,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 43,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_Citep",
+      "input": "不代表。\\Citep[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 12,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 43,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citealt",
+      "input": "不代表。\\citealt[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 14,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 45,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citealp",
+      "input": "不代表。\\citealp[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 14,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 45,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citeauthor",
+      "input": "不代表。\\citeauthor[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 17,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 48,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citeyear",
+      "input": "不代表。\\citeyear[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 15,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 46,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citeyearpar",
+      "input": "不代表。\\citeyearpar[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 18,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 49,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citetitle",
+      "input": "不代表。\\citetitle[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 16,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 47,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citedate",
+      "input": "不代表。\\citedate[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 15,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 46,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citeurl",
+      "input": "不代表。\\citeurl[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 14,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 45,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_citenum",
+      "input": "不代表。\\citenum[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 14,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 45,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_autocite",
+      "input": "不代表。\\autocite[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 15,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 46,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_parencite",
+      "input": "不代表。\\parencite[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 16,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 47,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_textcite",
+      "input": "不代表。\\textcite[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 15,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 46,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_footcite",
+      "input": "不代表。\\footcite[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 15,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 46,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_supercite",
+      "input": "不代表。\\supercite[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 16,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 47,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_smartcite",
+      "input": "不代表。\\smartcite[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 16,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 47,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_single_nocite",
+      "input": "不代表。\\nocite[不意味着验证][见{第[2]页}]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 1,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 13,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 44,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multi_cites",
+      "input": "\\cites(不代表通用性)(说明)[不意味着验证]{not-X-but-Y}[不能认为等效]{not-A-but-B}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 8,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 20,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 41,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multi_Cites",
+      "input": "\\Cites(不代表通用性)(说明)[不意味着验证]{not-X-but-Y}[不能认为等效]{not-A-but-B}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 8,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 20,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 41,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multi_autocites",
+      "input": "\\autocites(不代表通用性)(说明)[不意味着验证]{not-X-but-Y}[不能认为等效]{not-A-but-B}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 12,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 24,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 45,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multi_parencites",
+      "input": "\\parencites(不代表通用性)(说明)[不意味着验证]{not-X-but-Y}[不能认为等效]{not-A-but-B}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 13,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 25,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 46,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multi_Parencites",
+      "input": "\\Parencites(不代表通用性)(说明)[不意味着验证]{not-X-but-Y}[不能认为等效]{not-A-but-B}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 13,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 25,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 46,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multi_textcites",
+      "input": "\\textcites(不代表通用性)(说明)[不意味着验证]{not-X-but-Y}[不能认为等效]{not-A-but-B}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 12,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 24,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 45,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multi_footcites",
+      "input": "\\footcites(不代表通用性)(说明)[不意味着验证]{not-X-but-Y}[不能认为等效]{not-A-but-B}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 12,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 24,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 45,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multi_supercites",
+      "input": "\\supercites(不代表通用性)(说明)[不意味着验证]{not-X-but-Y}[不能认为等效]{not-A-but-B}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 13,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 25,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 46,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multi_smartcites",
+      "input": "\\smartcites(不代表通用性)(说明)[不意味着验证]{not-X-but-Y}[不能认为等效]{not-A-but-B}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 13,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 25,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 46,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_nested_note_and_following_group",
+      "input": "\\parencites[见{图[2]}，不代表通用性]{not-X-but-Y}[不意味着验证]{other} 正文{不能认为等效}。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 21,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 42,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 60,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_visible_citetext",
+      "input": "\\citetext{不代表通用性，参见\\cite{not-X-but-Y}} 不意味着验证。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 11,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 40,
+          "matched": "不意味着"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_multicite_line_break_and_comment",
+      "input": "\\autocites[不代表。]{not-X-but-Y}% comment\n[不意味着。]{not-A-but-B}正文不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 12,
+          "matched": "不代表"
+        },
+        {
+          "line": 2,
+          "column": 2,
+          "matched": "不意味着"
+        },
+        {
+          "line": 2,
+          "column": 23,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_starred_citep",
+      "input": "\\citep*[不代表通用性][不意味着验证]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 9,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 17,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 38,
+          "matched": "不能认为"
+        }
+      ]
+    },
+    {
+      "id": "independent/tex_starred_parencite",
+      "input": "\\parencite*[不代表通用性][不意味着验证]{not-X-but-Y} 不能认为等效。",
+      "latex": true,
+      "options": {},
+      "expected_positions": [
+        {
+          "line": 1,
+          "column": 13,
+          "matched": "不代表"
+        },
+        {
+          "line": 1,
+          "column": 21,
+          "matched": "不意味着"
+        },
+        {
+          "line": 1,
+          "column": 42,
+          "matched": "不能认为"
+        }
+      ]
+    }
+  ]
+}

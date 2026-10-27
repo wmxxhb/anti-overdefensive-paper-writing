@@ -1,0 +1,14 @@
+{
+  "version": "0.4.0",
+  "hash_basis": "SHA-256 of original UTF-8 file bytes",
+  "package_files": {
+    "agents/openai.yaml": "feb230e7b12af87be77f96365ca7895db46adaab58cc7d8053c2988db2c55746",
+    "references/examples.md": "4505fd757a40b08ee7e69031e80e62c388567116ef108ab3a9d7523dbbf5b584",
+    "references/manuscript-workflow.md": "f1773a2d966983e8b24d135e4493ebada05b29ee8691d126c700a93b67e468ab",
+    "references/source-notes.md": "af1e1f2ff39708a90eb4e515965d00be2427115c0bb527f5a02cbb874431730c",
+    "scripts/scan_defensive_prose.py": "7dd768eccecb5be41bad9c8f4d92f7945d4bc45d33b3817cf95cc79b2e816184",
+    "SKILL.md": "854f21405286efd42c302e7efef46f183433b416e4dfc28ec3d691c31075e89a",
+    "tests/behavior_cases.json": "fc2fd6e72f1a5e420923bcbb8004256f66eb7e298f3cb606c39aaf32f19e516b",
+    "tests/test_scanner.py": "44266d9dacd28a308a8e442173efae2ddde8efcfbe6f78005920ac2c53d67ed2"
+  }
+}

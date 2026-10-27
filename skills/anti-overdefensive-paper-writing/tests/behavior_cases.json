@@ -1,0 +1,177 @@
+{
+  "trigger_examples": {
+    "positive": [
+      "写一段论文引言，说明检索模块如何降低推理成本",
+      "润色这段论文，清理不意味着、不代表和无来由的否定对照",
+      "只审查这篇论文的防御性表达并汇报",
+      "根据现有结果重构全文叙事，保留负面结果",
+      "组织论文实验章节，让结果服务核心主张"
+    ],
+    "negative": [
+      "给 Python 函数增加重试逻辑",
+      "帮我查询会议投稿截止日期",
+      "给这张论文流程图改配色",
+      "核验这些 BibTeX 条目是否真实存在",
+      "审计统计检验是否适合研究设计"
+    ]
+  },
+  "cases": [
+    {
+      "id": "draft-cn",
+      "task": "根据材料写论文方法介绍，直接给出一段正文。",
+      "input": "模块根据查询与候选的相似度保留前 20 个候选，再交给原重排器。原系统每次重排 100 个候选。三个测试数据集上的平均延迟从 50 ms 降到 32 ms。没有提供准确率实验。",
+      "criteria": [
+        "交代查询相似度筛选与原重排器的操作关系",
+        "保留 20、100、50 ms、32 ms 和三个测试数据集",
+        "不编造准确率或机制验证",
+        "正文推进方法说明，不追加虚构反对意见或通用谨慎结尾",
+        "只陈述操作和延迟即可，不额外追加准确率尚待评估的防守收尾"
+      ]
+    },
+    {
+      "id": "revise-cn",
+      "task": "改写论文段落，给出可直接使用的正文。",
+      "input": "已有事实：在两个同领域数据集上，平均召回率从 71% 提高到 74%；跨领域表现尚未评估。原文：本研究不是要取代所有检索框架，而是探索一种候选筛选方法。这不意味着它具有通用能力，也不能认为该方法适用于所有场景，这些实验不代表全面验证。结果可能或许初步提示了某种潜在优势。",
+      "criteria": [
+        "直接陈述候选筛选与已报告结果",
+        "保留两个同领域数据集、71%、74% 与跨领域未评估",
+        "清理无来由的否定和叠加限定",
+        "不给每项删除增加免责声明"
+      ]
+    },
+    {
+      "id": "audit-split",
+      "task": "仅审查论文写作问题，指出具体原文和处理建议。",
+      "input": "这不是一个参数规模问题。真正的问题在于层间信息交换不足。该模块以局部可访问性而非全局连接为基础。模块将前一层的摘要向量传递给下一层。材料只提供了这项操作，未提供参数规模对比或全局连接对比实验。",
+      "criteria": [
+        "识别拆句式否定对照和而非倒装",
+        "聚焦额外否定对象对当前说明的作用",
+        "保留摘要向量传递事实",
+        "审查输出有原文锚点与可执行建议"
+      ]
+    },
+    {
+      "id": "preserve-evidence-tex",
+      "task": "润色下面 LaTeX 实验段落，保留格式与信息，直接给出正文。",
+      "input": "已有事实：A 准确率 86%，峰值显存 8 GB；B 准确率 89%，峰值显存 24 GB；设备预算 12 GB。原文：A 的准确率为 86\\%，峰值显存为 8 GB；B 分别为 89\\% 和 24 GB，目标设备预算为 12 GB~\\cite{baseline2025}。遗憾的是，A 并未全面超过 B，因此只能认为这是一个价值有限的简单改进。",
+      "criteria": [
+        "保留 A 与 B 的准确率和显存对应关系",
+        "保留 12 GB 预算与引用键 baseline2025",
+        "保留负面准确率差距，清理总体价值判断",
+        "保持 LaTeX 转义"
+      ]
+    },
+    {
+      "id": "real-rival",
+      "task": "根据材料写一段论文讨论，回应已有的替代解释。",
+      "input": "审稿人认为提升来自额外特征。两组实验使用相同特征；关闭检索模块后，准确率从 83% 降到 79%。目前没有其他机制实验。",
+      "criteria": [
+        "回应实际存在的额外特征解释",
+        "保留相同特征与 83%、79%",
+        "将结论限定在当前控制设置",
+        "不删除竞争解释，不声称排除了全部机制",
+        "结论限定于当前控制设置即可，不为已收窄的贡献判断追加无关机制免责声明"
+      ]
+    },
+    {
+      "id": "english-design-boundary",
+      "task": "Polish this scientific paragraph and return the paragraph only.",
+      "input": "This is not intended to be a universal theory. Rather, it is an analysis of two hospitals. Unfortunately, one might possibly argue that the association could potentially be useful. The study measured X and Y in two hospitals and found an association (r = 0.31). It did not control for confounding variables, so the association does not establish causation.",
+      "criteria": [
+        "Retain two hospitals, X, Y and r = 0.31",
+        "Retain the confounding and causal interpretation boundary",
+        "Remove uninvited universal-theory framing and stacked hedges",
+        "Return prose without review narration",
+        "State the observed association directly; omit a generic may-be-useful evaluation unsupported by measured utility"
+      ]
+    },
+    {
+      "id": "whole-manuscript-reframe",
+      "task": "根据事实重构题目、摘要、结果解释与结论，保留全部结果并给出可使用的文本。",
+      "input": "原题目：零成本的通用检索增强。原摘要：方法在任何分布都优于基线，无部署代价。实际问题：10 GB 显存设备无法运行峰值 14 GB 的基线。方法筛选候选再交给原重排器；两个同领域测试集准确率 85%→86%，显存 14 GB→9 GB，总延迟 30 ms→32 ms。筛选本身耗时 2 ms。未提供跨域、计算量或机制控制实验。原结论反复表示并非通用方案、贡献有限，并补了泛泛未来展望。",
+      "criteria": [
+        "贡献定位转到所测场景的低显存部署；题目摘要结论一致",
+        "保留全部数值、两个同领域测试集和延迟代价",
+        "不新增机制成立、全分布通用或零计算量结论",
+        "清理反复防守和空泛升华，保留必要未测项"
+      ]
+    },
+    {
+      "id": "source-status-and-quote",
+      "task": "润色论文段落，直接给正文，保持引语原话和证据状态。",
+      "input": "会议纪要批准试点筹备；受访者说“我们计划明年开始实施”。缺少交付记录、现场观察和效果测量。原文：这不是政策愿望。我们观察到试点已落地，证明授权转化为服务改善。尽管没有测量，机制可能或许初步成立。",
+      "criteria": [
+        "逐字保留给定引语",
+        "区分筹备授权、意向、交付、效果与机制推断",
+        "清理无依据断言及防守表态",
+        "保留具体材料缺口"
+      ]
+    },
+    {
+      "id": "experiment-roles",
+      "task": "根据已有结果安排实验章节及其论证职责，不开展新实验。",
+      "input": "任务是在 12 GB 设备运行。A 准确率 86%，峰值显存 8 GB；B 准确率 89%，显存 24 GB。两组相同特征，关闭 A 的筛选后显存 13 GB。未测跨域效果。作者原计划按“先试池化、后来调参、最后选筛选”组织。",
+      "criteria": [
+        "围绕部署目标安排主结果与消融职责",
+        "保留 A 准确率劣势及 B 信息",
+        "消融只支持当前设置的资源作用，不泛化到全部机制",
+        "清理尝试流水账，不虚构新实验结果"
+      ]
+    },
+    {
+      "id": "english-hidden-and-real-contrast",
+      "task": "Polish this methods and results paragraph; return prose only.",
+      "input": "This isn't a new benchmark. It is a way of reasoning about retrieval. Fast retrieval, not universal answers. No grand theory. No magic. Just fusion. The module merges two ranked lists using reciprocal-rank fusion. In the measured setting, recall increased from 70% to 73%, but precision did not change.",
+      "criteria": [
+        "Keep reciprocal-rank fusion and the two-list operation",
+        "Keep recall 70%→73% and unchanged precision",
+        "Remove unsupported framing and theatrical negation",
+        "Preserve the real contrastive result"
+      ]
+    },
+    {
+      "id": "editing-increment",
+      "task": "润色这段论文方法说明，保留科学含义，直接给正文。",
+      "input": "目录记录词项到分片的映射。查询只访问目录标记的分片。",
+      "criteria": [
+        "保留映射和访问规则",
+        "没有缺口时保留原来简洁的表达",
+        "不添加开场、同义复述、意义评价或未提供的性能结论"
+      ]
+    },
+    {
+      "id": "author-reader-calibration",
+      "task": "根据作者范文润色新稿，读者熟悉缓存，直接给新稿正文。",
+      "input": "范文：请求先读缓存。未命中的请求再访问后端。该设置的超时为3秒。新稿事实：路由表记录键到节点的映射，请求直接访问所映射节点；两个工作负载上的平均跳数由6降至2。未提供超时数据。原稿：首先应理解缓存是一项重要技术。我们不是否定现有路由，而是记录键到节点的映射，请求直接访问对应节点。值得指出，平均跳数在两个工作负载上由6降至2，具有潜在意义。",
+      "criteria": [
+        "先按给定范文校准简短技术语体",
+        "保留键节点映射、直接访问和两个负载6→2",
+        "删除读者已知背景与无依据对照及升华",
+        "不移植范文中的3秒超时，不追加未测超时免责声明"
+      ]
+    },
+    {
+      "id": "synthesis-versus-repetition",
+      "task": "审查论文结果与小结，只报告值得修改的问题。",
+      "input": "结果1：三个同领域测试集上，A的召回率为82%，显存为6 GB。结果2：相同设置下B的召回率为88%，显存为18 GB。小结：在8 GB显存预算下，A的实测显存占用符合约束；B提供更高召回率，其显存占用超过该预算。",
+      "criteria": [
+        "保留小结将预算、召回率和显存连接成权衡的作用",
+        "允许轻量合并，合并后保留比较关系、条件与全部结果",
+        "不以没有新数据或主题相同认定整段无信息",
+        "不将显存符合预算升级成完整部署已经验证"
+      ]
+    },
+    {
+      "id": "mixed-local-repetition-and-synthesis",
+      "task": "压缩论文小结，保留研究发现，直接给可用正文。",
+      "input": "实验1中A在域内准确率为90%，B为85%；实验2中A在域外准确率为70%，B为80%。小结原文：A在域内为90%，B为85%。换言之，A的域内准确率为90%，B为85%。结合实验2，方法排名随域变化：A在域内领先，B在域外领先。因此这说明不同域具有重要意义，值得未来进一步深入探索。",
+      "criteria": [
+        "压缩同层数字复述与空泛展望",
+        "保留跨域排名反转及两个实验的支持关系",
+        "保留域内90%/85%和域外70%/80%的对应关系",
+        "不扩展为B在所有新域均占优"
+      ]
+    }
+  ],
+  "suite_role": "development_regression"
+}
