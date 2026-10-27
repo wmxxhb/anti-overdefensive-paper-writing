@@ -4,6 +4,9 @@
 
 [English](README.en.md) · [查看 Skill](skills/anti-overdefensive-paper-writing/SKILL.md) · [v0.4.0](https://github.com/wmxxhb/anti-overdefensive-paper-writing/tree/v0.4.0)
 
+> [!TIP]
+> **写研究报告、技术说明、分析文章或项目方案？** 使用[通用论述写作版](https://github.com/wmxxhb/anti-overdefensive-writing)，围绕事实、理由和行动组织内容。两个版本均可独立安装。
+
 AI 润色后的论文里，常常多出“不是……而是……”“不意味着”“不代表”“不能认为”。段落开始回应假想的质疑，结尾再补一遍限制，原本清楚的研究发现被埋在解释和自我审查里。
 
 这个 Skill 帮助 AI 清理这些表达，把段落重新组织到研究问题、方法和证据上。支持中文与英文论文的起草、润色、压缩和写作审查。
@@ -97,10 +100,6 @@ python -B validation/run_probes.py
 ```
 
 </details>
-
-## 写报告、说明或方案时
-
-研究报告、技术说明、分析文章和项目方案，使用[通用论述写作版](https://github.com/wmxxhb/anti-overdefensive-writing)。它按读者的理解、判断和行动任务组织内容；本仓库侧重论文的贡献定位、实验组织和学术论证。两份 Skill 均可独立安装。
 
 ## License
 

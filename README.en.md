@@ -4,6 +4,9 @@
 
 [中文](README.md) · [View the skill](skills/anti-overdefensive-paper-writing/SKILL.md) · [v0.4.0](https://github.com/wmxxhb/anti-overdefensive-paper-writing/tree/v0.4.0)
 
+> [!TIP]
+> **Writing a report, guide, analysis, or proposal?** Use the [general writing edition](https://github.com/wmxxhb/anti-overdefensive-writing), organized around facts, reasoning, and action. Both skills work independently.
+
 AI revisions often add “not X but Y,” “this does not imply,” and “we do not claim.” Paragraphs start answering hypothetical objections, end with another caveat, and bury a clear finding under self-explanation.
 
 This skill helps the assistant remove that clutter and organize the prose around the research question, method, and evidence. It supports drafting, polishing, compression, and writing review in Chinese and English.
@@ -97,10 +100,6 @@ python -B validation/run_probes.py
 ```
 
 </details>
-
-## Writing a report, guide, analysis, or proposal?
-
-Use the [general explanatory-writing edition](https://github.com/wmxxhb/anti-overdefensive-writing). It organizes prose around what readers need to understand, judge, or do. This repository focuses on scholarly contributions, experiments, and academic argument. Each skill is self-contained.
 
 ## License
 
