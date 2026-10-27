@@ -98,6 +98,10 @@ python -B validation/run_probes.py
 
 </details>
 
+## Writing a report, guide, analysis, or proposal?
+
+Use the [general explanatory-writing edition](https://github.com/wmxxhb/anti-overdefensive-writing). It organizes prose around what readers need to understand, judge, or do. This repository focuses on scholarly contributions, experiments, and academic argument. Each skill is self-contained.
+
 ## License
 
 [MIT](LICENSE)

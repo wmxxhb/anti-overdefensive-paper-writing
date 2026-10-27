@@ -98,6 +98,10 @@ python -B validation/run_probes.py
 
 </details>
 
+## 写报告、说明或方案时
+
+研究报告、技术说明、分析文章和项目方案，使用[通用论述写作版](https://github.com/wmxxhb/anti-overdefensive-writing)。它按读者的理解、判断和行动任务组织内容；本仓库侧重论文的贡献定位、实验组织和学术论证。两份 Skill 均可独立安装。
+
 ## License
 
 [MIT](LICENSE)
